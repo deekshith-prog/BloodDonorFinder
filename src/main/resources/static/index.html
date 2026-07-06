@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Donor Finder</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="title">
+            <i class="bi bi-heart-pulse-fill text-danger"></i>
+            Blood Donor Finder
+        </h1>
+
+        <p class="subtitle">
+            Connecting Donors, Saving Lives ❤️
+        </p>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+
+            <div class="card stats-card shadow">
+
+                <i class="bi bi-people-fill icon"></i>
+
+                <h2 id="totalDonors">0</h2>
+
+                <p>Total Donors</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card stats-card shadow">
+
+                <i class="bi bi-heart-fill icon"></i>
+
+                <h2 id="availableDonors">0</h2>
+
+                <p>Available Donors</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card stats-card shadow">
+
+                <i class="bi bi-droplet-half icon"></i>
+
+                <h2>8</h2>
+
+                <p>Blood Groups</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Form + Table -->
+
+    <div class="row">
+
+        <!-- Form -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow p-4">
+
+                <h3 class="mb-4">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    Register Donor
+
+                </h3>
+
+                <form id="donorForm">
+
+                    <input
+                            class="form-control mb-3"
+                            type="text"
+                            id="name"
+                            placeholder="Enter Name"
+                            required>
+
+                    <input
+                            class="form-control mb-3"
+                            type="number"
+                            id="age"
+                            placeholder="Enter Age"
+                            required>
+
+                    <input
+                            class="form-control mb-3"
+                            type="text"
+                            id="gender"
+                            placeholder="Gender"
+                            required>
+
+                    <input
+                            class="form-control mb-3"
+                            type="text"
+                            id="bloodGroup"
+                            placeholder="Blood Group (O+, A+, B+...)"
+                            required>
+
+                    <input
+                            class="form-control mb-3"
+                            type="text"
+                            id="phone"
+                            placeholder="Phone Number"
+                            required>
+
+                    <input
+                            class="form-control mb-3"
+                            type="text"
+                            id="city"
+                            placeholder="City"
+                            required>
+
+                    <div class="form-check mb-4">
+
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="available">
+
+                        <label class="form-check-label">
+
+                            Available
+
+                        </label>
+
+                    </div>
+
+                    <button class="btn btn-danger w-100">
+
+                        <i class="bi bi-plus-circle-fill"></i>
+
+                        Register Donor
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Donor List -->
+
+        <div class="col-lg-8">
+
+            <div class="card shadow p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <h3>
+
+                        <i class="bi bi-table"></i>
+
+                        Registered Donors
+
+                    </h3>
+
+                    <button
+                            class="btn btn-outline-danger"
+                            onclick="loadDonors()">
+
+                        <i class="bi bi-arrow-clockwise"></i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover table-bordered">
+
+                        <thead class="table-danger">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Age</th>
+
+                            <th>Blood</th>
+
+                            <th>City</th>
+
+                            <th>Phone</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="donorTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
